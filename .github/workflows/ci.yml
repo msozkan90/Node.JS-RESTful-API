@@ -34,5 +34,5 @@ jobs:
 
       - name: Run tests
         env:
-          MONGODB_URI: mongodb://localhost:27017/docker-mongo
+          MONGODB_URI: mongodb+srv://msozkan:12345@testcluster.8u4d8hw.mongodb.net/?retryWrites=true&w=majority
         run: npm test
