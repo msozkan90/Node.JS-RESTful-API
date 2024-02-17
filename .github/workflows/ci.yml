@@ -12,11 +12,11 @@ jobs:
 
     services:
       mongodb:
-        image: mongo
+        image: mongo:4.4
         ports:
           - 27017:27017
         options: >-
-          --health-cmd "mongo --eval 'db.runCommand({ping: 1})'"
+          --health-cmd "mongo --eval 'db.adminCommand(\"ping\")'"
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
@@ -27,12 +27,12 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18'
+          node-version: "18"
 
       - name: Install dependencies
         run: npm install
 
       - name: Run tests
         env:
-          MONGODB_URI: mongodb+srv://msozkan:12345@testcluster.8u4d8hw.mongodb.net/?retryWrites=true&w=majority
+          MONGODB_URI: mongodb://mongodb:27017/docker-mongo
         run: npm test
