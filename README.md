@@ -51,7 +51,6 @@ Build and run the containers with Docker Compose:
 
 ```
 docker-compose -f docker-compose.yml up -d --build
-
 ```
 
 The API should now be accessible at http://localhost:3000
@@ -79,6 +78,9 @@ npm test
 ```
 
 Ensure MongoDB is accessible for the tests to run successfully.
+
+## Postman
+You can easily test the endpoints of the project by opening Postman and importing the NodeJS-Restful-Api.postman_collection.json file.
 
 ## Development
 
